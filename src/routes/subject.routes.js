@@ -4,12 +4,12 @@ import { verifyJWT } from "../middlewares/auth.middleware.js";
 
 const router = Router()
 
-router.route("/subjects").post(
+router.route("/createSubject").post(
     verifyJWT,
     createSubject
 )
 
-router.route("/subjects").get(
+router.route("/getSubjects").get(
     verifyJWT,
     getSubjects
 )
