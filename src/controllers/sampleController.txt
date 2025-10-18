@@ -1,0 +1,12 @@
+import, asyncHandler, apierror, apiresponse
+rest imports cloudinary jwt as per needed
+
+const controllerName = asyncHandler(async(req, res) => {
+    const {username, email, name, password} = req.body
+    
+    now write the controller... 
+})
+
+export {
+    controllerName
+}

@@ -1,0 +1,13 @@
+mongoose, schema ko import kro
+jwt import kro if needed
+jwt kr rhe ho to bcrypt bhi import 
+
+const sampleSchema = Schema (
+    {
+        names:{
+
+        }
+    }
+)
+
+mongoose ke model me ek particular name se sampleSchema export krdo
