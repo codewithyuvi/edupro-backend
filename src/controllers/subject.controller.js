@@ -38,7 +38,7 @@ const createSubject = asyncHandler( async (req, res ) => {
 const getSubjects = asyncHandler(async (req, res) => {
 
     const allSub = await Subject.find({}) // empty {} means we are finding with no creteria so we are getting all. if we want on any basis then {role: "admin"}
-    console.log(allSub);
+    // console.log(allSub);
     
     return res
     .status(200)
