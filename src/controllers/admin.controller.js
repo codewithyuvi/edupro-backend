@@ -131,6 +131,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
 
     const options = {
         httpOnly: true,
+        sameSite: 'none',
         secure: true,
         // in dono se, cookies frontend se uneditable bn jati hai, by default editable hoti hai. 
     }

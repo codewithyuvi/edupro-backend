@@ -26,4 +26,16 @@ app.use("/api/v1/admin", adminRouter) //middleware
 app.use("/api/v1/admin", subjectRouter) //middleware
 app.use("/api/v1/admin", filesRouter) //middleware
 
+
+
+// Global error handler (must be after all other app.use and routes)
+app.use((err, req, res, next) => {
+  res.status(err.statusCode || 500).json({
+    success: false,
+    message: err.message,
+    errors: err.error || [],
+    stack: process.env.NODE_ENV === "production" ? undefined : err.stack
+  });
+});
+
 export { app }
