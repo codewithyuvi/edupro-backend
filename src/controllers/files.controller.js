@@ -64,7 +64,7 @@ const uploadFile = asyncHandler(async (req, res) => {
 
   return res
     .status(201)
-    .json(new ApiResponse(201, uploadedFile, "File Uploaded Successfully"));
+    .json(new ApiResponse(201, uploadedFile, "Uploaded Successfully"));
 });
 
 const deleteFile = asyncHandler(async (req, res) => {
@@ -98,7 +98,7 @@ const getPdfByType = asyncHandler(async (req, res) => {
   const allowedValues = ['pyq', 'notes', 'syllabus']
   if(!allowedValues.includes(type)){
     throw new ApiError(400, "Select a Valid PDF Type")
-  }
+  } 
 
   let result;
   if(type === 'pyq' || type === 'syllabus' ){
