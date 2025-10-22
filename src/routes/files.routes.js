@@ -6,7 +6,7 @@ import {upload} from "../middlewares/multer.middleware.js"
 const router = Router()
 
 router.route("/uploadFile").post(
-    // verifyJWT,
+    verifyJWT,
     upload.fields(
         [
             {
@@ -34,7 +34,5 @@ router.route("/subject").get(
 router.route("/getPdf").get(
     getPdf
 )
-
-
 
 export default router

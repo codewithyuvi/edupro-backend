@@ -5,12 +5,12 @@ import { verifyJWT } from "../middlewares/auth.middleware.js";
 const router = Router()
 
 router.route("/createSubject").post(
-    // verifyJWT,
+    verifyJWT,
     createSubject
 )
 
 router.route("/getSubjects").get(
-    // verifyJWT,
+    
     getSubjects
 )
 
