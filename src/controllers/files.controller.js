@@ -53,7 +53,7 @@ const uploadFile = asyncHandler(async (req, res) => {
   const uploadedFile = await File.create({
     fileName, 
     fileType, 
-    fileUrl: fileUrl.url, 
+    fileUrl: fileUrl.secure_url, 
     subjectId, 
     unitName,
   });

@@ -69,7 +69,7 @@ const registerAdmin = asyncHandler( async (req, res) => {
     const admin = await Admin.create({
         username: username.toLowerCase(),
         fullName,
-        avatar: avatar.url,
+        avatar: avatar.secure_url,
         email,
         password,
     })
@@ -272,7 +272,7 @@ const updateAdminAvatar = asyncHandler(async (req, res) => {
 
     const avatar = await uploadOnCloudinary(avatarLocalPath)
 
-    if(!avatar.url){
+    if(!avatar.secure_url){
         throw new ApiError(400, "Error while uploading on avatar")
     }
 
@@ -280,7 +280,7 @@ const updateAdminAvatar = asyncHandler(async (req, res) => {
         req.admin?._id,
         {
             $set: {
-                avatar: avatar.url
+                avatar: avatar.secure_url
             }
         },
         {new: true}
